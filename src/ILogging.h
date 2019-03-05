@@ -2,8 +2,6 @@
 #define _ILOGGING_h
 
 //*****************************************************************************
-//! name of the LOGGING
-const char LOGGING_ID[] = "Logging";
 
 class ILogging {
 public:
