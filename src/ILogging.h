@@ -1,8 +1,6 @@
 #ifndef _ILOGGING_h
 #define _ILOGGING_h
 
-//*****************************************************************************
-
 class ILogging {
 public:
    enum EClassLogLevel {

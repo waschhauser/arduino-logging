@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <time.h>
 
 #include "Arduino.h"
 
@@ -93,7 +94,15 @@ void Logging::LogMessage(ILogging::EClassLogLevel eLogLevel, const char * format
       break;
    }
    
-   Serial.write(" : ");
+   Serial.write(" :");
+
+   time_t now;
+   struct tm * timeinfo;
+   time(&now);
+   timeinfo = localtime(&now);  
+
+   Serial.printf(" %02d:%02d:%02d : ", timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec);
+
    Serial.write((const uint8_t*)buffer, len);
 
    switch (eLogLevel) {
